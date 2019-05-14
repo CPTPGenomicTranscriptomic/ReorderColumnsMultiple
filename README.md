@@ -36,6 +36,8 @@ This command will download the code of ReorderColumnsMultiple from GitHub to a t
 
 Upload a file containing the rigth column order.
 
+The file must have the format text/csv, text/comma-separated-values, text/plain, or .csv extension to appear in the selection browser.
+
 The app will just look at the first line of this file to identify the columns to print in output in the specified order.
 
 The column names of this file should be exactly the same as the column names in the files to reorder and present in ALL the files.
