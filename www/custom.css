@@ -1,0 +1,20 @@
+.main-header .logo {
+  font-family: "Georgia", Times, "Times New Roman", serif;
+  font-weight: bold;
+  font-size: 24px;
+}
+
+body {
+	font-family: "Georgia";
+	font-size: 15px;
+}
+
+h3 {
+	font-family: "Georgia";
+	font-size: 20px;
+	font-weight: bold;
+}
+
+table, th, td {
+   border: 1px solid black;
+}
