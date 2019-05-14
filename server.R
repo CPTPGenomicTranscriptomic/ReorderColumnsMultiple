@@ -34,11 +34,7 @@ server <- function(input, output) {
     req(input$files)
     req(input$file)
     file <- input$file
-    if (is.null(file)) {
-      return(NULL)
-    } else {
-      theorder666 <- read.delim(file$datapath, stringsAsFactors = F, header=T)
-    }
+    theorder666 <- read.delim(file$datapath, stringsAsFactors = F, header=T)
     files <- input$files
     if (is.null(files)) {
       return(NULL)
