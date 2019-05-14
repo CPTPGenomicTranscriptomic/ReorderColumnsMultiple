@@ -63,4 +63,4 @@ The button will create a zip file corresponding to all the input files annotated
 
 The webpage should look like this!
 
-![alt text](https://github.com/CPTPGenomicTranscriptomic/Gene-Attributes-Multiple/blob/master/Gene-Attributes-Multiple_interface.png)
+![alt text](https://github.com/CPTPGenomicTranscriptomic/ReorderColumnsMultiple/blob/master/ReorderColumnsMultiple_interface.png)
