@@ -25,8 +25,6 @@ library(shinydashboard)
 library(dplyr)
 
 server <- function(input, output) {
-  #Increase size of upload files to 500 Mo
-  options(shiny.maxRequestSize=500*1024^2)
   output$inputFiles <- renderText({
     req(input$files)
     print(input$files$name)
@@ -36,7 +34,11 @@ server <- function(input, output) {
     req(input$files)
     req(input$file)
     file <- input$file
-    theorder666 <- read.delim(file$datapath, stringsAsFactors = F, header=T)
+    if (is.null(file)) {
+      return(NULL)
+    } else {
+      theorder666 <- read.delim(file$datapath, stringsAsFactors = F, header=T)
+    }
     files <- input$files
     if (is.null(files)) {
       return(NULL)
@@ -52,7 +54,7 @@ server <- function(input, output) {
       for(i in 1:length(files$name)) {
         incProgress(i/(length(files$name)), detail = paste("Working on the file:", files$name[i]))
         withProgress(message = 'In progress:', value = 0, {
-          incProgress(1/4, detail = "Reading input file.")
+          incProgress(1/2, detail = "Reading input file.")
           # read input genes
           data1 <- data.frame(read.delim(files$datapath[i], stringsAsFactors = F, header=T))
           #print(data1)
@@ -60,7 +62,7 @@ server <- function(input, output) {
 
           
           #Subsetting and writting files
-          incProgress(2/4, detail = "Subsetting and writting.")
+          incProgress(2/2, detail = "Subsetting and writting.")
           write.table(data1[,colnames(theorder666)], files$name[i], sep = "\t", quote = F, row.names = F)
         })
       }
